@@ -22,9 +22,11 @@ Generated ngfeog.bmp and ngfeog.bmp.gif
 ```
 
 ngfeog.bmp:
+
 ![Never go full electro (AKA Keep calm and read bits cycling in squared spirals). (BMP)](demo/ngfeog.bmp)
 
 ngfeog.bmp.gif:
+
 ![Never go full electro (AKA Keep calm and read bits cycling in squared spirals). (GIF)](demo/ngfeog.bmp.gif)
 
 
