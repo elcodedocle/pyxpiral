@@ -22,16 +22,16 @@ Generated ngfeog.bmp and ngfeog.bmp.gif
 ```
 
 ngfeog.bmp:
-![Keep calm and read bits cycling in squared spirals. (BMP)](demo/ngfeog.bmp)
+![Never go full electro (AKA Keep calm and read bits cycling in squared spirals). (BMP)](demo/ngfeog.bmp)
 
 ngfeog.bmp.gif:
-![Keep calm and read bits cycling in squared spirals. (GIF)](demo/ngfeog.bmp.gif)
+![Never go full electro (AKA Keep calm and read bits cycling in squared spirals). (GIF)](demo/ngfeog.bmp.gif)
 
 
 If you want to decode the message from the image:
 ```
 python pyxpiral.py --decode ngfeog.bmp
-Decoded ngfeog.bmp: Keep calm and read bits cycling in squared spirals.
+Decoded ngfeog.bmp: Never go full electro (AKA Keep calm and read bits cycling in squared spirals).
 ```
 
 Donations for this micro-project will be reinvested on local animal shelter: https://goo.gl/fvWmXL
