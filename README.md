@@ -1,5 +1,5 @@
 # pyxpiral
-Dirty cheap pseudo-DataMatrix (de)coder. Turns any ascii string into a 2d bitmap or gif and vice-versa.
+Dirty cheap pseudo-[DataMatrix](https://en.wikipedia.org/wiki/Datamatrix) (de)coder. Turns any ascii string into a 2d bitmap or gif and vice-versa.
 
 
 ## Usage
