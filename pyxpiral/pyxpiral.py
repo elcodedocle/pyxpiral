@@ -207,7 +207,7 @@ def main(argv):
 		return
 
 	if not args.output_filename:
-		args.output_filename = open('output.bmp','w')
+		args.output_filename = open('output.bmp','wb')
 
 	image = ppl.encode(
 		args.encode,
