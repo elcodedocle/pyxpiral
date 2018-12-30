@@ -152,7 +152,7 @@ class Pyxpiral(object):
 			)
 			image = image.resize([x*upscale for x in image.size])
 			msg_img_seq.append(image)
-			bits = bits[-rotation_step:] + bits[:-rotation_step]
+			bits = bits[-rotation_step-1:-1] + bits[:-rotation_step-1] + '1'
 		return msg_img_seq
 
 	@staticmethod
