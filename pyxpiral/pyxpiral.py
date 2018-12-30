@@ -67,6 +67,9 @@ class Pyxpiral(object):
 		i = int(bits, 2)
 		hex_string = '%x' % i
 		n = len(hex_string)
+		print(bits)
+		print(i)
+		print(hex_string)
 		return binascii.unhexlify(hex_string.zfill(n + (n & 1))).decode(encoding, errors)
 
 	@staticmethod
