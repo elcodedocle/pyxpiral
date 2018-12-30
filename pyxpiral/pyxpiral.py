@@ -39,7 +39,7 @@ class Pyxpiral(object):
 
 	@staticmethod
 	def _array_to_image(msg_matrix):
-		image = Image.fromarray(numpy.array(msg_matrix))
+		image = Image.fromarray(numpy.array(msg_matrix), mode='I')
 		if image.mode != 'RGB':
 			image = image.convert('RGB')
 		return image

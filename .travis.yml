@@ -1,9 +1,9 @@
 language: python
 python:
-  - "2.7.13"
+  - "2.7"
   - "3.6"
 install:
-  - pip install pytest pytest-cov mock
+  - pip install pytest pytest-cov mock pylint
   - pip install -r requirements.txt
 script:
   - pytest -v --junitxml unittests.xml --cov=pyxpiral --cov-config .coveragerc --cov-report xml --cov-report term
