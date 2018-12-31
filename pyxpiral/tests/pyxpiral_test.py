@@ -45,14 +45,14 @@ class TestPyxpiral(unittest.TestCase):
 		image = self.ppl.encode(self.message)
 
 	def test_decode(self):
-		image = self.ppl.encode(self.message)
+		image = self.ppl.encode(self.message, upscale=1)
 		image.save(open("test_decode.bmp", "wb"), format='BMP')
-		self.assertEquals(self.ppl.decode("test_decode.bmp"), self.message)
+		self.assertEquals(self.ppl.decode("test_decode.bmp", downscale=1), self.message)
 
 	def test_encode_fractal(self):
-		images = self.ppl.encode_fractal(self.message)
+		images = self.ppl.encode_fractal(self.message, upscale=1)
 		images[0].save(open("test_decode_fractal.bmp", "wb"), format='BMP')
-		self.assertEquals(self.ppl.decode("test_decode_fractal.bmp"), self.message)
+		self.assertEquals(self.ppl.decode("test_decode_fractal.bmp", downscale=1), self.message)
 
 	def tearDown(self):
 		'''
