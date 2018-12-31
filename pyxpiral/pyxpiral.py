@@ -27,6 +27,10 @@ class Pyxpiral(object):
 
 	@staticmethod
 	def _get_bits_from_msg(message):
+		print(binascii.hexlify(message if sys.version_info < (3, 0) else bytes(message,'ascii')))
+		print(int(binascii.hexlify(message if sys.version_info < (3, 0) else bytes(message,'ascii')), base=16))
+		print(bin(int(binascii.hexlify(message if sys.version_info < (3, 0) else bytes(message,'ascii')), base=16))[2:])
+		print(bin(int(binascii.hexlify(message if sys.version_info < (3, 0) else bytes(message,'ascii')), base=16))[2:]+'1')
 		return bin(int(binascii.hexlify(message if sys.version_info < (3, 0) else bytes(message,'ascii')), base=16))[2:]+'1'
 
 	@staticmethod
@@ -48,8 +52,7 @@ class Pyxpiral(object):
 	def _image_to_array(input_filename, downscale=10):
 		image = Image.open(input_filename)
 		image.load()
-		if downscale>1:
-			image = image.resize([x//downscale for x in image.size])
+		image = image.resize([x//downscale for x in image.size])
 		return numpy.asarray(image, dtype="int32")
 
 	@staticmethod
@@ -126,7 +129,7 @@ class Pyxpiral(object):
 			step_size=step_size
 		)
 		image = Pyxpiral._array_to_image(msg_matrix)
-		return image if upscale <=1 else image.resize([x*upscale for x in image.size])
+		return image.resize([x*upscale for x in image.size])
 
 	@staticmethod
 	def encode_fractal(msg, upscale=10, colors=[0xFF,0x00], step_size=1, rotation_step = 1):
