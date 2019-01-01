@@ -9,8 +9,8 @@ import math
 import io
 import binascii
 import sys
-import numpy
 import struct
+import numpy
 from PIL import Image
 
 if sys.version_info < (3, 0):
