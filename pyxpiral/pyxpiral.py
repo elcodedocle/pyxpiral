@@ -53,7 +53,7 @@ class Pyxpiral(object):
 
 	@staticmethod
 	def _array_to_bits(image_matrix, bg_color=0x00, step_size=1, ld_border=1):
-		bg_color_rgb = list(map(ord,struct.pack('>i',bg_color))[1:])
+		bg_color_rgb = list(map(ord,struct.pack('>i',bg_color)))[1:]
 		xpsize = int(math.pow(len(image_matrix),2))
 		dim = Pyxpiral._get_dim(xpsize)
 		offset = Pyxpiral._get_offset(dim)
@@ -89,8 +89,8 @@ class Pyxpiral(object):
 
 	@staticmethod
 	def _pixpiralize(bits, bits_color=0xFFFFFF, bg_color=0x00, step_size=1, ld_border=1):
-		bg_color_rgb = list(map(ord,struct.pack('>i',bg_color))[1:])
-		bits_color_rgb = list(map(ord,struct.pack('>i',bits_color))[1:])
+		bg_color_rgb = list(map(ord,struct.pack('>i',bg_color)))[1:]
+		bits_color_rgb = list(map(ord,struct.pack('>i',bits_color)))[1:]
 		xpsize = len(bits)
 		dim = Pyxpiral._get_dim(xpsize*step_size)
 		bit_matrix = [[bg_color_rgb for x in range(dim+ld_border)] for y in range(dim+ld_border)]
