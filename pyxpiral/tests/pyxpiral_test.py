@@ -34,7 +34,7 @@ class TestPyxpiral(unittest.TestCase):
 		Test setUp.
 		'''
 		self.ppl = pyxpiral.Pyxpiral()
-		self.message = u"Never go full electro (AKA Keep calm and read bits cycling in squared spirals).".decode('utf-8').encode('ascii')
+		self.message = "Never go full electro (AKA Keep calm and read bits cycling in squared spirals)."
 
 	def test_encode(self):
 		image = self.ppl.encode(self.message)
