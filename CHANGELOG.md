@@ -1,3 +1,7 @@
+# Version 2.0.0
+- Improve `decode` by decoding to nearest color
+- Refactor color params
+
 # Version 1.0.0
 - Use `PIL.Image` as `Pyxpiral.decode` input parameter instead of image file handler or image filename.
 - Fix image mode detection on linux systems.
