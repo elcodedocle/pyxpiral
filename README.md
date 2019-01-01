@@ -1,6 +1,6 @@
 # pyxpiral
 Dirty cheap pseudo-[DataMatrix](https://en.wikipedia.org/wiki/Datamatrix) (de)coder. Turns any ascii string into a 2d bitmap or gif and vice-versa.
-
+[![Build Status](https://travis-ci.org/elcodedocle/pyxpiral.svg?branch=master)](https://travis-ci.org/elcodedocle/pyxpiral)
 
 ## Usage
 
