@@ -1,3 +1,7 @@
+# Version 2.0.1
+- Fix decode offset calculation
+- Support --bg-color and --bits-color args in hex format 
+
 # Version 2.0.0
 - Improve `decode` by decoding to nearest color
 - Refactor color params

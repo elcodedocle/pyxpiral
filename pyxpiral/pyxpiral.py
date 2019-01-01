@@ -62,10 +62,10 @@ class Pyxpiral:
     def _array_to_bits(image_matrix, bg_color=0x00, bits_color=0xFFFFFF, step_size=1, ld_border=1):
         bg_color_rgb = Pyxpiral._get_rgb_color(bg_color)
         bits_color_rgb = Pyxpiral._get_rgb_color(bits_color)
-        xpsize = int(math.pow(len(image_matrix), 2))
-        dim = Pyxpiral._get_dim(xpsize)
+        dim = len(image_matrix)-ld_border
+        xpsize = int(math.pow(dim, 2))
         offset = Pyxpiral._get_offset(dim)
-        offset_cur = [offset - ld_border, offset]
+        offset_cur = [offset, offset + ld_border]
         bits = []
         for cur in Pyxpiral._get_cursor(xpsize, offset_cur, step_size):
             bits.append('0' if numpy.linalg.norm(image_matrix[cur[0]][cur[1]] - bg_color_rgb) <=
@@ -134,8 +134,8 @@ class Pyxpiral:
         bits = Pyxpiral._get_bits_from_msg(msg)
         msg_matrix = Pyxpiral._pixpiralize(
             bits,
-            bits_color=bits_color,
             bg_color=bg_color,
+            bits_color=bits_color,
             step_size=step_size,
             ld_border=ld_border
         )
@@ -163,13 +163,15 @@ class Pyxpiral:
         bits = Pyxpiral._get_bits_from_msg(msg)
         num_rotations = int(len(bits) // gcd(len(bits), rotation_step))
         msg_img_seq = []
+        ld_border = 1
         for _ in range(num_rotations):
             image = Pyxpiral._array_to_image(
                 Pyxpiral._pixpiralize(
                     bits,
                     bg_color=bg_color,
                     bits_color=bits_color,
-                    step_size=step_size
+                    step_size=step_size,
+                    ld_border=ld_border
                 )
             )
             image = image.resize([x * upscale for x in image.size])
@@ -204,6 +206,10 @@ class Pyxpiral:
         return Pyxpiral._bits_to_ascii(bits)
 
 
+def _auto_int(x):
+    return int(x, 0)
+
+
 def main(argv):
     """Processes the program input arguments for turning any ascii string into a 2d bitmap or gif
     and vice-versa.
@@ -223,9 +229,9 @@ def main(argv):
 
     parser.add_argument('--scale', default=10, type=int,
                         help='bit size in square pixels, default=10')
-    parser.add_argument('--bg-color', default=0x00, type=int,
+    parser.add_argument('--bg-color', default=0x00, type=_auto_int,
                         help='bit color for value 0, default=0x00')
-    parser.add_argument('--bits-color', default=0xFFFFFF, type=int,
+    parser.add_argument('--bits-color', default=0xFFFFFF, type=_auto_int,
                         help='bit color for value 1, default=0xFFFFFF')
     parser.add_argument('--step-size', default=1, type=int,
                         help='distance between consecutive bits, default=1')
