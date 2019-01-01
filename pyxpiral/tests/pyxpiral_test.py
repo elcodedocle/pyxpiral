@@ -36,23 +36,16 @@ class TestPyxpiral(unittest.TestCase):
 		self.ppl = pyxpiral.Pyxpiral()
 		self.message = "Never go full electro (AKA Keep calm and read bits cycling in squared spirals)."
 
-	@pytest.fixture(autouse=True)
-	def initdir(self, tmpdir):
-		tmpdir.chdir()
-		self.tmpdir = tmpdir
-
 	def test_encode(self):
 		image = self.ppl.encode(self.message)
 
 	def test_decode(self):
-		image = self.ppl.encode(self.message)
-		image.save(open("test_decode.bmp", "wb"), format='BMP')
-		self.assertEquals(self.ppl.decode("test_decode.bmp"), self.message)
+		image = self.ppl.encode(self.message, upscale=1)
+		self.assertEquals(self.ppl.decode(image, downscale=1), self.message)
 
 	def test_encode_fractal(self):
-		images = self.ppl.encode_fractal(self.message)
-		images[0].save(open("test_decode_fractal.bmp", "wb"), format='BMP')
-		self.assertEquals(self.ppl.decode("test_decode_fractal.bmp"), self.message)
+		images = self.ppl.encode_fractal(self.message, upscale=1)
+		self.assertEquals(self.ppl.decode(images[0], downscale=1), self.message)
 
 	def tearDown(self):
 		'''
