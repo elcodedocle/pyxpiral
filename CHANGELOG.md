@@ -1,3 +1,8 @@
+# Version 1.0.0
+- Use `PIL.Image` as `Pyxpiral.decode` input parameter instead of image file handler or image filename.
+- Fix image mode detection on linux systems.
+- Add Dockerfile python2 and python3 alpine linux based project environment definitions
+
 # Version 0.0.3
 - Fix write modifier for default output file.
 
