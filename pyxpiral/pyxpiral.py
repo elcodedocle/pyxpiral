@@ -206,8 +206,8 @@ class Pyxpiral:
         return Pyxpiral._bits_to_ascii(bits)
 
 
-def _auto_int(x):
-    return int(x, 0)
+def _auto_int(int_str):
+    return int(int_str, 0)
 
 
 def main(argv):
