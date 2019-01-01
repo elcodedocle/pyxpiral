@@ -39,6 +39,13 @@ class Pyxpiral(object):
 		return int(math.ceil((dim-1)//2))
 
 	@staticmethod
+	def _get_rgb_color(int_color):
+		rgb_color = [k for k in struct.pack('>i',int_color)[1:]]
+		if sys.version_info < (3, 0):
+			rgb_color = [ord(k) for k in rgb_color]
+		return rgb_color
+
+	@staticmethod
 	def _array_to_image(msg_matrix):
 		image = Image.fromarray(numpy.array(msg_matrix).astype('uint8'))
 		if image.mode != 'RGB':
@@ -53,7 +60,7 @@ class Pyxpiral(object):
 
 	@staticmethod
 	def _array_to_bits(image_matrix, bg_color=0x00, step_size=1, ld_border=1):
-		bg_color_rgb = list(map(ord,struct.pack('>i',bg_color)))[1:]
+		bg_color_rgb = Pyxpiral._get_rgb_color(bg_color)
 		xpsize = int(math.pow(len(image_matrix),2))
 		dim = Pyxpiral._get_dim(xpsize)
 		offset = Pyxpiral._get_offset(dim)
@@ -89,8 +96,8 @@ class Pyxpiral(object):
 
 	@staticmethod
 	def _pixpiralize(bits, bits_color=0xFFFFFF, bg_color=0x00, step_size=1, ld_border=1):
-		bg_color_rgb = list(map(ord,struct.pack('>i',bg_color)))[1:]
-		bits_color_rgb = list(map(ord,struct.pack('>i',bits_color)))[1:]
+		bg_color_rgb = Pyxpiral._get_rgb_color(bg_color)
+		bits_color_rgb = Pyxpiral._get_rgb_color(bits_color)
 		xpsize = len(bits)
 		dim = Pyxpiral._get_dim(xpsize*step_size)
 		bit_matrix = [[bg_color_rgb for x in range(dim+ld_border)] for y in range(dim+ld_border)]
