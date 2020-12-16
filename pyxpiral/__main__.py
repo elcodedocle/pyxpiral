@@ -220,27 +220,27 @@ def main(argv):
         'into a 2d bitmap + animated gif and vice-versa.')
 
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('--encode', help='message to encode')
-    group.add_argument('--decode', default=False, type=argparse.FileType('rb'),
+    group.add_argument('-e', '--encode', help='message to encode')
+    group.add_argument('-d', '--decode', default=False, type=argparse.FileType('rb'),
                        help='image to decode')
-    group.add_argument('--version', help='print version and exit', action='store_true')
+    group.add_argument('-v', '--version', help='print version and exit', action='store_true')
 
-    parser.add_argument('--scale', default=10, type=int,
+    parser.add_argument('-d' '--scale', default=10, type=int,
                         help='bit size in square pixels, default=10')
-    parser.add_argument('--bg-color', default=0x00, type=_auto_int,
+    parser.add_argument('-b', '--bg-color', default=0x00, type=_auto_int,
                         help='bit color for value 0, default=0x00')
-    parser.add_argument('--bits-color', default=0xFFFFFF, type=_auto_int,
+    parser.add_argument('-B', '--bits-color', default=0xFFFFFF, type=_auto_int,
                         help='bit color for value 1, default=0xFFFFFF')
-    parser.add_argument('--step-size', default=1, type=int,
+    parser.add_argument('-s', '--step-size', default=1, type=int,
                         help='distance between consecutive bits, default=1')
-    parser.add_argument('--rotation-step', default=1, type=int,
+    parser.add_argument('-r', '--rotation-step', default=1, type=int,
                         help='bits rotated per gif frame, default=1')
-    parser.add_argument('--frame-duration', default=100, type=int,
+    parser.add_argument('-f', '--frame-duration', default=100, type=int,
                         help='frame duration in ms, default=100')
-    parser.add_argument('--loops', default=0, type=int,
+    parser.add_argument('-l', '--loops', default=0, type=int,
                         help='number of gif loops (0=infinite), default=0')
 
-    parser.add_argument('--output-filename', default=None, type=argparse.FileType('wb'),
+    parser.add_argument('-o', '--output-filename', default=None, type=argparse.FileType('wb'),
                         help='output filename (.gif will be appended on gif generation)')
 
     args = parser.parse_args(argv[1:])
