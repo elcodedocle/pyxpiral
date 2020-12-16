@@ -1,3 +1,6 @@
+# Version 2.0.8
+ - Fix `--scale` argument shorthand
+
 # Version 2.0.7
  - Fix `__version__` import
 
