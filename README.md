@@ -14,6 +14,7 @@ usage: python3 -m pyxpiral [-h] (--encode ENCODE | --decode DECODE) [--scale SCA
                    [--frame-duration FRAME_DURATION] [--loops LOOPS]
                    [--output-filename OUTPUT_FILENAME]
 ```
+(If you see `__main__.py` instead of `python3 -m pyxpiral`, replace it with `python3 -m pyxpiral` or `python -m pyxpiral`)
 
 
 ### Example
