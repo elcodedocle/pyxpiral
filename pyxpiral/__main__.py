@@ -55,7 +55,7 @@ class Pyxpiral:
 
     @staticmethod
     def _image_to_array(image, downscale=10):
-        image = image.resize([x // downscale for x in image.size])
+        image = image.resize([x // downscale for x in image.size], Image.NEAREST)
         return numpy.asarray(image, dtype="int32")
 
     @staticmethod
@@ -140,7 +140,7 @@ class Pyxpiral:
             ld_border=ld_border
         )
         image = Pyxpiral._array_to_image(msg_matrix)
-        return image.resize([x * upscale for x in image.size])
+        return image.resize([x * upscale for x in image.size], Image.NEAREST)
 
     @staticmethod
     def encode_fractal(msg, upscale=10, colors=None, step_size=1, rotation_step=1):
@@ -174,7 +174,7 @@ class Pyxpiral:
                     ld_border=ld_border
                 )
             )
-            image = image.resize([x * upscale for x in image.size])
+            image = image.resize([x * upscale for x in image.size], Image.NEAREST)
             msg_img_seq.append(image)
             bits = bits[-rotation_step - 1:-1] + bits[:-rotation_step - 1] + '1'
         return msg_img_seq
