@@ -43,9 +43,7 @@ CLASSIFIERS = [
     "Natural Language :: English",
     "Operating System :: Unix",
     "Operating System :: Microsoft :: Windows",
-    "Programming Language :: Python :: 2.7",
     "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 2",
     "Programming Language :: Python :: 3",
 ]
 
@@ -56,7 +54,7 @@ DEPENDENCIES = read('requirements.txt').split()
 PACKAGE_DATA = {}
 DATA_FILES = []
 
-REQUIRED_VERSION = '2.7'
+REQUIRED_VERSION = '3.7'
 
 SETUP_PARAMS = dict(
     name=NAME,
