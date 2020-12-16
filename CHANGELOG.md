@@ -1,3 +1,7 @@
+# Version 2.0.6
+ - Add CLI argument shorthands
+ - Add `-v`, `--version` argument to print current version
+
 # Version 2.0.5
  - Update `README.md`
 
