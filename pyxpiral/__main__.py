@@ -228,7 +228,7 @@ def main(argv):
                        help='image to decode')
     group.add_argument('-v', '--version', help='print version and exit', action='store_true')
 
-    parser.add_argument('-d' '--scale', default=10, type=int,
+    parser.add_argument('-S', '--scale', default=10, type=int,
                         help='bit size in square pixels, default=10')
     parser.add_argument('-b', '--bg-color', default=0x00, type=_auto_int,
                         help='bit color for value 0, default=0x00')
