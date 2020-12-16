@@ -1,3 +1,6 @@
+# Version 2.0.7
+ - Fix `__version__` import
+
 # Version 2.0.6
  - Add CLI argument shorthands
  - Add `-v`, `--version` argument to print current version
