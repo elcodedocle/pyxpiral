@@ -1,3 +1,6 @@
+# Version 2.0.5
+ - Update `README.md`
+
 # Version 2.0.4
  - Remove `__main__.py`
  - Rename `pyxpiral.py` to `__main__.py`
