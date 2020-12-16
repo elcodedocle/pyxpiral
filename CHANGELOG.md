@@ -1,3 +1,6 @@
+# Version 2.0.9
+ - Fix default resampling filter change on pillow>=7.0.0
+
 # Version 2.0.8
  - Fix `--scale` argument shorthand
 
