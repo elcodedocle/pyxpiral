@@ -12,7 +12,10 @@ import struct
 import numpy
 from PIL import Image
 from math import gcd
-from __init__ import __version__
+try:
+    from pyxpiral import __version__
+except:
+    from __init__ import __version__
 
 
 class Pyxpiral:
