@@ -36,7 +36,7 @@ URL = "http://github.com/elcodedocle/pyxpiral/"
 CLASSIFIERS = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
-    "Intended Audience :: UnitedWarriorsOfTheWorld",
+    "Intended Audience :: Other Audience",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Natural Language :: English",
