@@ -1,3 +1,6 @@
+# Version 2.0.10
+ - Fix import on unit tests
+
 # Version 2.0.9
  - Fix default resampling filter change on pillow>=7.0.0
 
