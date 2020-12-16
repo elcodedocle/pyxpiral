@@ -1,5 +1,5 @@
 # Version 2.0.3
- - Add __main__.py
+ - Add `__main__.py`
 
 # Version 2.0.2
  - Upgrade pillow>=7.1.0 to fix several CVEs
