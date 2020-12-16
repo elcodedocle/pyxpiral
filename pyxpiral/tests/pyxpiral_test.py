@@ -11,7 +11,7 @@ Unitary tests for pyxpiral.py.
 import logging
 import unittest
 
-from .. import pyxpiral
+from .. import __main__ as pyxpiral
 
 
 class TestPyxpiral(unittest.TestCase):
