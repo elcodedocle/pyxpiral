@@ -33,8 +33,6 @@ AUTHOR = "elcodedocle"
 AUTHOR_EMAIL = "gael.abadin@gmail.com"
 URL = "http://github.com/elcodedocle/pyxpiral/"
 
-LICENSE = read('LICENSE')
-
 CLASSIFIERS = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
@@ -61,7 +59,6 @@ SETUP_PARAMS = dict(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
-
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     url=URL,
@@ -69,7 +66,6 @@ SETUP_PARAMS = dict(
     long_description_content_type='text/markdown',
     packages=find_packages(),
     package_data=PACKAGE_DATA,
-    license=LICENSE,
     scripts=SCRIPTS,
     data_files=DATA_FILES,
     install_requires=DEPENDENCIES,
