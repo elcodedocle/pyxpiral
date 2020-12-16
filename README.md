@@ -34,7 +34,7 @@ ngfeog.bmp.gif:
 
 If you want to decode the message from the image:
 ```
-python3 -m pyxpiral --decode ngfeog.bmp
+$python3 -m pyxpiral --decode ngfeog.bmp
 Decoded ngfeog.bmp: Never go full electro (AKA Keep calm and read bits cycling in squared spirals).
 ```
 
