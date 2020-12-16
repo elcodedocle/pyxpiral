@@ -11,11 +11,8 @@ import sys
 import struct
 import numpy
 from PIL import Image
-
-if sys.version_info < (3, 0):
-    from fractions import gcd
-else:
-    from math import gcd
+from math import gcd
+from __init__ import __version__
 
 
 class Pyxpiral:
@@ -226,6 +223,7 @@ def main(argv):
     group.add_argument('--encode', help='message to encode')
     group.add_argument('--decode', default=False, type=argparse.FileType('rb'),
                        help='image to decode')
+    group.add_argument('--version', help='print version and exit', action='store_true')
 
     parser.add_argument('--scale', default=10, type=int,
                         help='bit size in square pixels, default=10')
@@ -246,6 +244,10 @@ def main(argv):
                         help='output filename (.gif will be appended on gif generation)')
 
     args = parser.parse_args(argv[1:])
+
+    if args.version:
+        print("pyxpiral version "+__version__)
+        return
 
     # Pyxpiral is static, instance is not required.
     ppl = Pyxpiral()
