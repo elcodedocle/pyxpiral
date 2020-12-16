@@ -6,8 +6,9 @@ Dirty cheap pseudo-[DataMatrix](https://en.wikipedia.org/wiki/Datamatrix) (de)co
 ## Usage
 
 ```
-$python pyxpiral.py
-usage: pyxpiral.py [-h] (--encode ENCODE | --decode DECODE) [--scale SCALE]
+$pip3 install pyxpiral
+$python3 -m pyxpiral
+usage: python3 -m pyxpiral [-h] (--encode ENCODE | --decode DECODE) [--scale SCALE]
                    [--bg-color BG_COLOR] [--bits-color BITS_COLOR]
                    [--step-size STEP_SIZE] [--rotation-step ROTATION_STEP]
                    [--frame-duration FRAME_DURATION] [--loops LOOPS]
@@ -18,7 +19,7 @@ usage: pyxpiral.py [-h] (--encode ENCODE | --decode DECODE) [--scale SCALE]
 ### Example
 All free pseudo-DataMatrix. Get yours today:
 ```
-python pyxpiral.py --encode "Never go full electro (AKA Keep calm and read bits cycling in squared spirals)." --output ngfeog.bmp
+$python3 -m pyxpiral --encode "Never go full electro (AKA Keep calm and read bits cycling in squared spirals)." --output ngfeog.bmp
 Generated ngfeog.bmp and ngfeog.bmp.gif
 ```
 
@@ -33,7 +34,7 @@ ngfeog.bmp.gif:
 
 If you want to decode the message from the image:
 ```
-python pyxpiral.py --decode ngfeog.bmp
+python3 -m pyxpiral --decode ngfeog.bmp
 Decoded ngfeog.bmp: Never go full electro (AKA Keep calm and read bits cycling in squared spirals).
 ```
 
