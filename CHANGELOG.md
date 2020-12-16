@@ -1,3 +1,7 @@
+# Version 2.0.4
+ - Remove `__main__.py`
+ - Rename `pyxpiral.py` to `__main__.py`
+
 # Version 2.0.3
  - Add `__main__.py`
 
