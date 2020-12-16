@@ -39,7 +39,8 @@ CLASSIFIERS = [
     "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: UnitedWarriorsOfTheWorld",
-    "License :: MIT",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
     "Natural Language :: English",
     "Operating System :: Unix",
     "Operating System :: Microsoft :: Windows",
@@ -65,6 +66,7 @@ SETUP_PARAMS = dict(
     author_email=AUTHOR_EMAIL,
     url=URL,
     long_description=read('README.md'),
+    long_description_content_type='text/markdown',
     packages=find_packages(),
     package_data=PACKAGE_DATA,
     license=LICENSE,
@@ -72,6 +74,7 @@ SETUP_PARAMS = dict(
     data_files=DATA_FILES,
     install_requires=DEPENDENCIES,
     classifiers=CLASSIFIERS,
+    python_requires='>=3.7',
 )
 
 
